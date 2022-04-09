@@ -4,11 +4,13 @@ import ShowsContext from '../../context/showsContext';
 import { useContext, useEffect } from 'react';
 
 const Home = () => {
-	const { getShows } = useContext(ShowsContext);
+	const { shows, getShows } = useContext(ShowsContext);
 
 	useEffect(() => {
-		getShows('house');
-	}, [getShows]);
+		if (!shows.length) {
+			getShows('days');
+		}
+	}, [getShows, shows.length]);
 
 	return (
 		<>

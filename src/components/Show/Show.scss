@@ -39,6 +39,21 @@
     }
   }
 
+    &__empty-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 43vw;
+    height: 43vw * 1.4;
+    max-height: 295px;
+    max-width: 210px;
+    margin: 5px 16px 0 0;
+    background: linear-gradient(to bottom left, rgb(250, 248, 255) 0%,rgb(149, 143, 171)  100%);
+    color: $home-link-font-color;
+    font-weight: 700;
+  }
+
   &:hover >&__img-wrapper > &__img{
     @media (min-width: $min-width){
       transform: scale(1.07);
@@ -121,7 +136,7 @@
     width: 100%;
     padding: 6px 0;
     color: $channel-font-color;
-    background-color: $channel-bcg-colog;
+    background-color: $channel-bcg-color;
     text-align: center;
     font-size: $channel-font-size-small;
 

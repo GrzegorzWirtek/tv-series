@@ -9,5 +9,6 @@
 
   @media (min-width: $min-width){
     grid-template-columns: repeat(auto-fit, 210px);
+    gap: 3vw;
   }
 }

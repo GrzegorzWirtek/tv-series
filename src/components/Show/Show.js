@@ -14,7 +14,11 @@ const Show = ({ showsData }) => {
 		<article className='show' onClick={() => handleChoose(id)}>
 			<div className='show__curtain'></div>
 			<div className='show__img-wrapper'>
-				<img className='show__img' src={image} alt={name} />
+				{image ? (
+					<img className='show__img' src={image} alt={name} />
+				) : (
+					<div className='show__empty-img'>No photo</div>
+				)}
 			</div>
 			<h3 className='show__title'>{name}</h3>
 			<p className='show__interval'>{interval}</p>

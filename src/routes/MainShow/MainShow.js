@@ -13,19 +13,45 @@ const MainShow = () => {
 		getMainShow(id);
 	}, [getMainShow, id]);
 
-	const { name, image, summary } = show;
-	const img = image ? image.medium : null;
+	// console.log(show._embedded ? show._embedded.cast : 'nie ma obsady');
+	console.log(show);
 
-	let description;
-	if (summary) {
-		description = summary.replace(/<p>|<[/]p>|<b>|<[/]b>/g, '');
-	}
-
-	return (
+	return !show.id ? null : (
 		<section className='main-show'>
-			<img className='main-show__img' src={img} alt={name} />
-			<p className='main-show__name'>{name}</p>
-			<p className='main-show__description'>{description}</p>
+			{show.image ? (
+				<img
+					className='main-show__img'
+					src={show.image.medium}
+					alt={show.name}
+				/>
+			) : (
+				<div className='main-show__empty-img'>No photo</div>
+			)}
+			<div className='main-show__details'>
+				<p className='main-show__name'>{show.name}</p>
+				{show.premiered && (
+					<p className='main-show__interval'>{`${show.premiered.slice(0, 4)}${
+						show.ended ? -show.ended.slice(0, 4) : ''
+					}`}</p>
+				)}
+				{show.network && (
+					<p className='main-show__country'>{show.network.country.name}</p>
+				)}
+				<p className='main-show__genres'>{show.genres.join(' | ')}</p>
+				<p className='main-show__channel'>
+					{show.webChannel ? show.webChannel.name : show.network.name}
+				</p>
+				<p className='main-show__rating'>
+					<span className='main-show__rating-span'>Rating: </span>{' '}
+					{show.rating.average ? show.rating.average : 0}
+				</p>
+			</div>
+
+			{show.summary && (
+				<p className='main-show__description'>
+					{show.summary.replace(/<p>|<[/]p>|<b>|<[/]b>/g, '')}
+				</p>
+			)}
 		</section>
 	);
 };

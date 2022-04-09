@@ -23,9 +23,11 @@ const Shows = () => {
 		const showsData = {
 			id,
 			name,
-			image: image.medium,
+			image: image ? image.medium : null,
 			webChannel: webChannel ? webChannel.name : network.name,
-			interval: `${premiered.slice(0, 4)}${ended ? -ended.slice(0, 4) : ''}`,
+			interval: premiered
+				? `${premiered.slice(0, 4)}${ended ? -ended.slice(0, 4) : ''}`
+				: null,
 			genres: genres.join(' | '),
 			rating: rating.average,
 		};

@@ -24,7 +24,9 @@ const ShowsState = (props) => {
 	}, []);
 
 	const getMainShow = useCallback(async (id) => {
-		const mainShowData = await axios.get(`https://api.tvmaze.com/shows/${id}`);
+		const mainShowData = await axios.get(
+			`https://api.tvmaze.com/shows/${id}?embed=cast`,
+		);
 
 		return dispatch({
 			type: GET_MAIN_SHOW,

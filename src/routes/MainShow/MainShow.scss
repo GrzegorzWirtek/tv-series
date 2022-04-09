@@ -1,9 +1,102 @@
-.main-show__img{
-  width: 43vw;
-  max-width: 210px;
-  margin: 5px 16px 0 0;
-  float: left;
+@import '../../scss/variables.scss';
+
+.main-show{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+
+  &__img{
+    flex-basis: 43%;
+    width: 43vw;
+    max-width: 210px;
+    height: 43vw * 1.4;
+    max-height: 295px;
+    margin: 5px 16px 0 0;
+  }
+
+  &__empty-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 43vw;
+    height: 43vw * 1.4;
+    max-height: 295px;
+    max-width: 210px;
+    margin: 5px 16px 0 0;
+    background: linear-gradient(to bottom left, rgb(250, 248, 255) 0%,rgb(149, 143, 171)  100%);
+    color: $home-link-font-color;
+    font-weight: 700;
+  }
+
+  &__details{
+    flex-basis: 40%;
+  }
+
+  &__name{
+    font-size: $title-font-size-medium;
+    font-weight: 700;
+    margin-bottom: 15px;
+
+    @media (min-width: $medium-width){
+      font-size: $title-font-size-large;
+    }
+  }
+
+  &__country, &__interval{
+    font-size: $date-font-size-medium;
+    margin-bottom: $text-margin;
+
+    @media (min-width: $medium-width){
+      font-size: $date-font-size-large;
+    }
+  }
+
+ &__genres{
+    font-size: $date-font-size-medium;
+    margin-bottom: $text-margin;
+    color: $country-font-color;
+
+    @media (min-width: $medium-width){
+      font-size: $date-font-size-large;
+    }
+  }
+  
+  &__channel{
+    display: inline;
+    padding: 2px 10px;
+    line-height: 1.8;
+    color: $channel-font-color;
+    background-color: $channel-bcg-color;
+    font-size: $channel-font-size-small;
+
+    @media (min-width: $medium-width){
+      padding: 4px 14px;
+    }
+  }
+
+  &__rating{
+    font-weight: 900;
+    background-color: $rating-bcg-color;
+    font-size: $rating-font-size-nr-medium;
+    color: $rating-font-color;
+    margin-top: 2px;
+
+    &-span{
+      vertical-align: middle;
+      font-size:$channel-font-size-small;
+      font-weight: 700;
+    }
+  }
+
+  &__description{
+    margin-top: 20px;
+    font-size: $main-description-font-size;
+  }
 }
+
+
 
 // .main-show__description{
 //   width: 50vh;
