@@ -7,7 +7,7 @@ const Home = () => {
 	const { getShows } = useContext(ShowsContext);
 
 	useEffect(() => {
-		getShows('house', 'home');
+		getShows('house');
 	}, [getShows]);
 
 	return (

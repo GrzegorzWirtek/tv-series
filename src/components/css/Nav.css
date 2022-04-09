@@ -2,10 +2,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 40px;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  margin: 40px 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media (min-width: 480px) {
@@ -17,7 +17,7 @@
 }
 
 .nav__link {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: black;
   text-decoration: none;
@@ -28,5 +28,9 @@
   .nav__link {
     margin-right: 30px;
   }
+}
+
+.nav__link--home {
+  color: grey;
 }
 /*# sourceMappingURL=Nav.css.map */

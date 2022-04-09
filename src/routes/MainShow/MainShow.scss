@@ -1,8 +1,10 @@
 .main-show__img{
-  width: 210px;
+  width: 43vw;
+  max-width: 210px;
+  margin: 5px 16px 0 0;
+  float: left;
 }
 
-.main-show__description{
-  width: 400px;
-  background-color: yellow;
-}
+// .main-show__description{
+//   width: 50vh;
+// }

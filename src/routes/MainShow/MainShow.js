@@ -10,7 +10,7 @@ const MainShow = () => {
 	const { getMainShow, show } = useContext(ShowsContext);
 
 	useEffect(() => {
-		getMainShow(id, 'show');
+		getMainShow(id);
 	}, [getMainShow, id]);
 
 	const { name, image, summary } = show;
@@ -23,9 +23,9 @@ const MainShow = () => {
 
 	return (
 		<section className='main-show'>
-			<p className='main-show__description'>{description}</p>
-			<p className='main-show__name'>{name}</p>
 			<img className='main-show__img' src={img} alt={name} />
+			<p className='main-show__name'>{name}</p>
+			<p className='main-show__description'>{description}</p>
 		</section>
 	);
 };

@@ -1,7 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home/Home';
-import Seasons from './Seasons/Seasons';
 import MainShow from './MainShow/MainShow';
+import Seasons from './Seasons/Seasons';
+import Cast from './Cast/Cast';
+import Crew from './Crew/Crew';
 
 const Router = () => {
 	return (
@@ -9,6 +11,8 @@ const Router = () => {
 			<Route path='/' element={<Home />} />
 			<Route path='/show/:id' element={<MainShow />} />
 			<Route path='/seasons' element={<Seasons />} />
+			<Route path='/cast' element={<Cast />} />
+			<Route path='/crew' element={<Crew />} />
 		</Routes>
 	);
 };

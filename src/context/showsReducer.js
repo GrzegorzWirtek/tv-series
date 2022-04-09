@@ -1,23 +1,16 @@
-import { GET_SHOWS, GET_MAIN_SHOW, SET_ROUTE } from './types';
+import { GET_SHOWS, GET_MAIN_SHOW } from './types';
 
 const showsReducer = (state, action) => {
 	switch (action.type) {
 		case GET_SHOWS:
 			return {
 				...state,
-				shows: action.payload.shows,
-				route: action.payload.route,
+				shows: action.payload,
 			};
 		case GET_MAIN_SHOW:
 			return {
 				...state,
-				show: action.payload.show,
-				route: action.payload.route,
-			};
-		case SET_ROUTE:
-			return {
-				...state,
-				route: action.payload,
+				show: action.payload,
 			};
 		default:
 			return state;
