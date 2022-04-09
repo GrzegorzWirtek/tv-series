@@ -1,0 +1,19 @@
+.shows {
+  margin-top: 40px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (43vw)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 43vw);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5vw;
+}
+
+@media (min-width: 480px) {
+  .shows {
+    -ms-grid-columns: (210px)[auto-fit];
+        grid-template-columns: repeat(auto-fit, 210px);
+  }
+}
+/*# sourceMappingURL=Shows.css.map */

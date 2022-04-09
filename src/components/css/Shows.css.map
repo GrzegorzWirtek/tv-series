@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,MAAM,CAAA;EACJ,UAAU,EAAC,IAAI;EACf,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,sBAAsB;EAC7C,eAAe,EAAE,MAAM;EACvB,GAAG,EAAE,GAAG;CAKT;;AAHC,MAAM,EAAE,SAAS,EAAE,KAAK;EAP1B,AAAA,MAAM,CAAA;IAQF,qBAAqB,EAAE,uBAAuB;GAEjD",
+    "sources": [
+        "../Shows/Shows.scss",
+        "../../scss/variables.scss"
+    ],
+    "names": [],
+    "file": "Shows.css"
+}

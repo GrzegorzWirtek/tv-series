@@ -1,0 +1,24 @@
+@import '../../scss/variables.scss';
+
+.nav{
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-evenly;
+
+  @media (min-width: $min-width){
+    justify-content:flex-end;
+  }
+
+  &__link{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  
+    @media (min-width: $min-width){
+      margin-right: 30px;
+    }
+  }
+}
+
