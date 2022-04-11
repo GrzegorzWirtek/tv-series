@@ -4,11 +4,15 @@ $channel-bcg-color: #706e9e;
 $rating-bcg-color: white;
 $show-curtain-color: rgba(29, 29, 55, 0.268);
 $channel-font-color: white;
-$rating-font-color: rgb(167, 0, 0);
+$rating-font-color: #a60000;
 $home-link-font-color: grey;
 $country-font-color:grey;
 $search-border-color: #969696;
 $header-bcg-color: #39385d;
+$header-bcg-gradient:  linear-gradient(165deg, rgba(103,102,157,1) 0%, rgb(34, 32, 66) 100%);
+$empty-img-bcg-gradient: linear-gradient(155deg, rgb(250, 248, 255,1) 0%, rgb(146, 143, 157) 100%);
+$season-nr-bcg-color: rgb(124, 127, 156);
+$season-nr-bcg-gradient: linear-gradient(170deg, rgb(124, 127, 156) 0%, rgb(58, 59, 74) 100%);
 
 //FONT_SIZES
 $header-font-size: 1.2rem;
@@ -32,11 +36,17 @@ $rating-font-size-nr-medium: 1.4rem;
 
 $input-font-size: 1.1rem;
 
+$season-name-font-size: 1rem;
+$season-number-font-size: 1.2rem;
+
+$popup-title-font-size: 1.2rem;
+
 //SIZES
 $main-padding: 20px;
 $text-margin: 6px;
 $show-text-padding: 3px;
 $max-width: 900px;
+$seasons-width: 1200px;
 $input-height-large: 42px;
 $input-height-small: 40px;
 

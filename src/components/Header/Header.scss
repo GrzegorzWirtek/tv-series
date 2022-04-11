@@ -6,11 +6,13 @@
   height: 100px;
   padding: 0 $main-padding;
   margin-bottom: 70px; 
-  background-color: $header-bcg-color;
+  background: $header-bcg-gradient;
 
   &__title{
     padding-top: $header-margin-top;
     color: $header-font-color;
     font-size: $header-font-size;
+    font-weight: 700;
+    letter-spacing: 1px;
   }
 }

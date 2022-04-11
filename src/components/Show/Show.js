@@ -17,7 +17,9 @@ const Show = ({ showsData }) => {
 				{image ? (
 					<img className='show__img' src={image} alt={name} />
 				) : (
-					<div className='show__empty-img'>No photo</div>
+					<div className='show__empty-img'>
+						<p className='show__empty-img-text'>No photo</p>
+					</div>
 				)}
 			</div>
 			<h3 className='show__title'>{name}</h3>

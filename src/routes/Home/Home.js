@@ -34,7 +34,7 @@ const Home = () => {
 
 	useEffect(() => {
 		if (!shows.length) {
-			getShows(Math.floor(Math.random() * RANDOM.length));
+			getShows(RANDOM[Math.floor(Math.random() * RANDOM.length)]);
 		} else {
 			removeData();
 		}

@@ -21,12 +21,12 @@ const showsReducer = (state, action) => {
 			return {
 				...state,
 				show: {},
+				seasons: [],
 			};
 		case GET_SEASONS:
 			return {
 				...state,
-				seasons: action.payload.data,
-				show: { id: action.payload.id },
+				seasons: action.payload,
 			};
 		default:
 			return state;

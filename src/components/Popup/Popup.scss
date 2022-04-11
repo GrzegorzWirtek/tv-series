@@ -1,0 +1,80 @@
+@import '../../scss/variables.scss';
+
+.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+  background-color: rgba(125, 129, 148, 0.546);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  &__wrapper{
+    position: relative;
+    text-align: center;
+    width: 95vw;
+    max-width: 360px;
+    padding: 65px 15px;
+    background-color: white;
+  }
+
+  &__close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 45px;
+    height: 45px;
+    filter: invert(8%) sepia(91%) saturate(5808%) hue-rotate(359deg) brightness(92%) contrast(107%);
+    cursor: pointer;
+  }
+
+  &__img{
+    width: 250px;
+    height: 140px;
+  }
+
+  &__empty-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 250px;
+    height: 140px;
+    background: $empty-img-bcg-gradient;
+  }
+
+  &__empty-img-text{
+    color: $home-link-font-color;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  &__title{
+    font-size: $popup-title-font-size;
+    font-weight: 700;
+    margin: 12px 0;
+  }
+
+  &__date{
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: $country-font-color;
+    margin-bottom: 10px;
+  }
+
+  &__summary{
+    text-align: left;
+  }
+
+  &__no-description{
+    text-align: center;
+    font-weight: 700;
+    margin-top: 40px;
+    color: $home-link-font-color;
+  }
+}

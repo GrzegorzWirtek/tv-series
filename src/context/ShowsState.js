@@ -48,11 +48,12 @@ const ShowsState = (props) => {
 
 	const getSeasons = useCallback(async (id) => {
 		const seasonsData = await axios.get(
-			`https://api.tvmaze.com/shows/${id}/episodes`,
+			// `https://api.tvmaze.com/shows/${id}/episodes`,
+			`https://api.tvmaze.com/shows/${id}/episodes?specials=${id}`,
 		);
 		return dispatch({
 			type: GET_SEASONS,
-			payload: { data: seasonsData.data, id },
+			payload: seasonsData.data,
 		});
 	}, []);
 

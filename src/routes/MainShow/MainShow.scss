@@ -26,13 +26,18 @@
     max-height: 295px;
     max-width: 210px;
     margin: 5px 16px 0 0;
-    background: linear-gradient(to bottom left, rgb(250, 248, 255) 0%,rgb(149, 143, 171)  100%);
+    background: $empty-img-bcg-gradient;
+  }
+
+  &__empty-img-text{
     color: $home-link-font-color;
     font-weight: 700;
+    font-size: 1.2rem;
   }
 
   &__details{
     flex-basis: 40%;
+    font-size: 0;
   }
 
   &__name{
@@ -56,8 +61,8 @@
 
  &__genres{
     font-size: $date-font-size-medium;
-    margin-bottom: $text-margin;
     color: $country-font-color;
+    margin-bottom: $text-margin;
 
     @media (min-width: $medium-width){
       font-size: $date-font-size-large;
@@ -65,9 +70,10 @@
   }
   
   &__channel{
-    display: inline;
-    padding: 2px 10px;
-    line-height: 1.8;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+    padding: 4px 10px;
     color: $channel-font-color;
     background-color: $channel-bcg-color;
     font-size: $channel-font-size-small;

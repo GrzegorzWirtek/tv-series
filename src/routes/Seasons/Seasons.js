@@ -1,16 +1,19 @@
 import './Seasons.scss';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ShowsContext from '../../context/showsContext';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import Popup from '../../components/Popup/Popup';
 
 const Seasons = () => {
-	const { seasons, getSeasons } = useContext(ShowsContext);
-
+	const { show, seasons, getSeasons } = useContext(ShowsContext);
+	const navigate = useNavigate();
 	const { id } = useParams();
+	const [infoId, setInfoId] = useState(0);
 
 	useEffect(() => {
+		if (!show.name) return navigate('/');
 		getSeasons(id);
-	}, [getSeasons, id]);
+	}, [getSeasons, id, navigate, show.name]);
 
 	let episodesArr = [];
 	let seasonsArr = [];
@@ -31,18 +34,25 @@ const Seasons = () => {
 		}
 	}
 
-	// console.log(seasonsArr);
+	const handleShowInfo = (episodeId) => {
+		setInfoId(episodeId);
+	};
 
-	let description = seasons.find((item) => item.id === 1610); //opis z Fargo
-	console.log(description && description.summary);
+	const handleCloseInfo = () => {
+		setInfoId(0);
+	};
 
-	const tak = seasonsArr.map((season, index) => {
+	const seasonsContent = seasonsArr.map((season, index) => {
 		return (
-			<div key={index}>
-				sezon{index + 1}
-				{season.map((episode) => (
-					<p>
-						{episode.name}, ID odcinka: {episode.id}
+			<div className='seasons__se-wrapper' key={index}>
+				<p className='seasons__se-nr'>Season {index + 1}</p>
+				{season.map((episode, index) => (
+					<p
+						className='seasons__se-name'
+						key={episode.id}
+						onClick={() => handleShowInfo(episode.id)}>
+						<span className='seasons__se-name--nr'>{index + 1}</span>
+						<span className='seasons__se-name--text'>{episode.name}</span>
 					</p>
 				))}
 			</div>
@@ -50,10 +60,34 @@ const Seasons = () => {
 	});
 
 	return (
-		<>
-			<p>LICZBA SEZONÓW: {seasonsArr.length}</p>
-			{tak}
-		</>
+		show.name && (
+			<section className='seasons'>
+				{infoId ? (
+					<Popup
+						info={seasons.find((item) => item.id === infoId)}
+						click={handleCloseInfo}
+					/>
+				) : null}
+				<div className='seasons__wrapper'>
+					<div className='seasons__header'>
+						{show.image ? (
+							<img
+								className='seasons__img'
+								src={show.image.medium}
+								alt={show.name}
+							/>
+						) : (
+							<div className='seasons__img-empty'>
+								<p className='seasons__img-empty-text'>No photo</p>
+							</div>
+						)}
+						<h3 className='seasons__title'>{show.name}</h3>
+						<p className='seasons__nr-of'>Seasons: {seasonsArr.length}</p>
+					</div>
+					{seasonsContent}
+				</div>
+			</section>
+		)
 	);
 };
 

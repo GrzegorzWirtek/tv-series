@@ -24,7 +24,9 @@ const MainShow = () => {
 					alt={show.name}
 				/>
 			) : (
-				<div className='main-show__empty-img'>No photo</div>
+				<div className='main-show__empty-img'>
+					<p className='main-show__empty-img-text'>No photo</p>
+				</div>
 			)}
 			<div className='main-show__details'>
 				<p className='main-show__name'>{show.name}</p>
