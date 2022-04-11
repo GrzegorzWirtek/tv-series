@@ -1,14 +1,20 @@
 @import '../../scss/variables.scss';
 
 .shows{
-  margin-top:40px;
+  margin-top:60px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 43vw);
   justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
   gap: 5vw;
 
   @media (min-width: $min-width){
     grid-template-columns: repeat(auto-fit, 210px);
     gap: 3vw;
+  }
+
+  @media (min-width: $medium-width){
+    margin: 120px auto 0 auto;
   }
 }

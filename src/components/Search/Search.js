@@ -12,10 +12,10 @@ const Search = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		if (!inputValue.length) return;
 		getShows(inputValue);
 		setInputValue('');
 		inputRef.current.blur();
-
 		navigate('/');
 	};
 

@@ -14,9 +14,8 @@ const MainShow = () => {
 	}, [getMainShow, id]);
 
 	// console.log(show._embedded ? show._embedded.cast : 'nie ma obsady');
-	console.log(show);
 
-	return !show.id ? null : (
+	return !show.name ? null : (
 		<section className='main-show'>
 			{show.image ? (
 				<img
@@ -37,9 +36,13 @@ const MainShow = () => {
 				{show.network && (
 					<p className='main-show__country'>{show.network.country.name}</p>
 				)}
-				<p className='main-show__genres'>{show.genres.join(' | ')}</p>
+				<p className='main-show__genres'>
+					{show.genres && show.genres.join(' | ')}
+				</p>
 				<p className='main-show__channel'>
-					{show.webChannel ? show.webChannel.name : show.network.name}
+					{show.webChannel
+						? show.webChannel.name
+						: show.network && show.network.name}
 				</p>
 				<p className='main-show__rating'>
 					<span className='main-show__rating-span'>Rating: </span>{' '}
@@ -49,7 +52,7 @@ const MainShow = () => {
 
 			{show.summary && (
 				<p className='main-show__description'>
-					{show.summary.replace(/<p>|<[/]p>|<b>|<[/]b>/g, '')}
+					{show.summary.replace(/<p>|<[/]p>|<b>|<[/]b>|<i>|<[/]i>/g, '')}
 				</p>
 			)}
 		</section>

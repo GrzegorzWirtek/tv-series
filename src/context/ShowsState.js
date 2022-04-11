@@ -1,6 +1,11 @@
 import ShowsContext from './showsContext';
 import { useReducer, useCallback } from 'react';
-import { GET_SHOWS, GET_MAIN_SHOW } from './types';
+import {
+	GET_SHOWS,
+	GET_MAIN_SHOW,
+	REMOVE_MAIN_SHOW,
+	GET_SEASONS,
+} from './types';
 import showsReducer from './showsReducer';
 import axios from 'axios';
 
@@ -8,6 +13,7 @@ const ShowsState = (props) => {
 	const initialState = {
 		shows: [],
 		show: {},
+		seasons: [],
 	};
 
 	const [state, dispatch] = useReducer(showsReducer, initialState);
@@ -34,14 +40,33 @@ const ShowsState = (props) => {
 		});
 	}, []);
 
+	const removeData = useCallback(() => {
+		return dispatch({
+			type: REMOVE_MAIN_SHOW,
+		});
+	}, []);
+
+	const getSeasons = useCallback(async (id) => {
+		const seasonsData = await axios.get(
+			`https://api.tvmaze.com/shows/${id}/episodes`,
+		);
+		return dispatch({
+			type: GET_SEASONS,
+			payload: { data: seasonsData.data, id },
+		});
+	}, []);
+
 	return (
 		<ShowsContext.Provider
 			value={{
 				shows: state.shows,
 				show: state.show,
 				route: state.route,
+				seasons: state.seasons,
 				getShows,
 				getMainShow,
+				removeData,
+				getSeasons,
 			}}>
 			{props.children}
 		</ShowsContext.Provider>

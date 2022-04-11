@@ -3,8 +3,9 @@
 .main-show{
   display: flex;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: $max-width;
   margin: 0 auto;
+  padding: 0 $main-padding;
 
   &__img{
     flex-basis: 43%;
@@ -95,9 +96,3 @@
     font-size: $main-description-font-size;
   }
 }
-
-
-
-// .main-show__description{
-//   width: 50vh;
-// }

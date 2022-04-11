@@ -1,18 +1,23 @@
 @import '../../scss/variables.scss';
 
 .search{
-  margin-top: 40px;
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 0 $main-padding;
 
   &__form{
     position: relative;
     display: flex;
     width: 100%;
-    max-width: 700px;
-    height: 48px;
+    max-width: 600px;
+    height: $input-height-large;
     margin: 0 auto;
 
     @media (min-width: $medium-width){
-      height: 40px;
+      height: $input-height-small;
     }
   }
 
@@ -23,13 +28,14 @@
     outline: none;
     border: none;
     font-size: $input-font-size;
-    border: 1px solid $search-border-color;
-  }
-
-  &__input:focus{
+    overflow: hidden;
     -webkit-box-shadow: 5px 5px 16px -9px rgba(0, 0, 0, 0.61);
     -moz-box-shadow: 5px 5px 16px -9px rgba(0, 0, 0, 0.61);
     box-shadow: 5px 5px 16px -9px rgba(0, 0, 0, 0.61);
+  }
+
+  &__input:focus{
+    border: 1px solid $search-border-color;
   }
 
   &__input::placeholder { 
@@ -49,7 +55,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    width: 60px;
+    width: 48px;
     height: 100%;
     overflow: hidden;
     outline: none;
@@ -60,7 +66,8 @@
   }
 
   &__svg{
-    width: 25px;
+    width: 22px;
+    transform: translateY(1px);
     filter: invert(69%) sepia(0%) saturate(14%) hue-rotate(14deg) brightness(88%) contrast(91%);
   }
 }

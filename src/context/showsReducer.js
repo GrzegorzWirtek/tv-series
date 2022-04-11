@@ -1,4 +1,9 @@
-import { GET_SHOWS, GET_MAIN_SHOW } from './types';
+import {
+	GET_SHOWS,
+	GET_MAIN_SHOW,
+	REMOVE_MAIN_SHOW,
+	GET_SEASONS,
+} from './types';
 
 const showsReducer = (state, action) => {
 	switch (action.type) {
@@ -11,6 +16,17 @@ const showsReducer = (state, action) => {
 			return {
 				...state,
 				show: action.payload,
+			};
+		case REMOVE_MAIN_SHOW:
+			return {
+				...state,
+				show: {},
+			};
+		case GET_SEASONS:
+			return {
+				...state,
+				seasons: action.payload.data,
+				show: { id: action.payload.id },
 			};
 		default:
 			return state;
