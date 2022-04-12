@@ -21,7 +21,10 @@ const Popup = ({ info, click }) => {
 				{info.airdate && <p className='popup__date'>{info.airdate}</p>}
 				<p className='popup__summary'>
 					{info.summary ? (
-						info.summary.replace(/<p>|<[/]p>|<b>|<[/]b>|<i>|<[/]i>/g, '')
+						info.summary.replace(
+							/<p>|<[/]p>|<b>|<[/]b>|<i>|<[/]i>|<br [/]>/g,
+							'',
+						)
 					) : (
 						<p className='popup__no-description'>No description</p>
 					)}

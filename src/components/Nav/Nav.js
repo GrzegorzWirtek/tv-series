@@ -19,7 +19,7 @@ const Nav = () => {
 				Seasons
 			</NavLink>
 
-			<NavLink className='nav__link' to={'/cast'}>
+			<NavLink className='nav__link' to={`/cast/${show.id}`}>
 				Cast
 			</NavLink>
 

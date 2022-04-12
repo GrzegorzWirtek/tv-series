@@ -39,25 +39,6 @@
     }
   }
 
-    &__empty-img{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      float: left;
-      width: 43vw;
-      height: 43vw * 1.4;
-      max-height: 295px;
-      max-width: 210px;
-      margin: 5px 16px 0 0;
-      background: $empty-img-bcg-gradient;
-  }
-
-  &__empty-img-text{
-    color: $home-link-font-color;
-    font-weight: 700;
-    font-size: 1.2rem;
-  }
-
   &:hover >&__img-wrapper > &__img{
     @media (min-width: $min-width){
       transform: scale(1.07);

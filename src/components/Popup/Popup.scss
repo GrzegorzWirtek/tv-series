@@ -7,37 +7,74 @@
   width: 100vw;
   height: 100vh;
   z-index: 4;
-  background-color: rgba(125, 129, 148, 0.546);
+  background-color: $popup-bcg-color;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  perspective: 1000px;
+  opacity: 0;
+  animation: opacity-popup 0.15s forwards;
+
+  @keyframes opacity-popup{
+    0%{
+      opacity: 0;
+     }
+   
+     100%{
+      opacity: 1;
+     }
+   }
 
   &__wrapper{
     position: relative;
-    text-align: center;
+    text-align: right;
     width: 95vw;
-    max-width: 360px;
-    padding: 65px 15px;
+    max-width: 400px;
+    max-height: 80vh;
+    padding: 0 15px 45px 15px;
+    border-bottom: 15px solid transparent;
+    border-top: 15px solid transparent;
     background-color: white;
+    overflow: auto;
+    transform: rotateX(90deg);
+    animation: rotate-wrapper 0.15s forwards;
+    z-index: 4;
+
+    @keyframes rotate-wrapper{
+      0%{
+        transform: rotateX(90deg);
+       }
+     
+       100%{
+        transform: rotateX(0deg);
+       }
+     }
   }
 
   &__close{
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 45px;
-    height: 45px;
-    filter: invert(8%) sepia(91%) saturate(5808%) hue-rotate(359deg) brightness(92%) contrast(107%);
+    position: sticky;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: white;
     cursor: pointer;
   }
 
   &__img{
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 250px;
     height: 140px;
   }
 
   &__empty-img{
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,9 +91,11 @@
   }
 
   &__title{
+    text-align: center;
     font-size: $popup-title-font-size;
     font-weight: 700;
-    margin: 12px 0;
+    margin: 160px 0 10px 0;
+
   }
 
   &__date{

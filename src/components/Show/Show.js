@@ -1,4 +1,6 @@
 import './Show.scss';
+import EmptyImage from '../EmptyImage/EmptyImage';
+
 import { useNavigate } from 'react-router-dom';
 
 const Show = ({ showsData }) => {
@@ -17,9 +19,7 @@ const Show = ({ showsData }) => {
 				{image ? (
 					<img className='show__img' src={image} alt={name} />
 				) : (
-					<div className='show__empty-img'>
-						<p className='show__empty-img-text'>No photo</p>
-					</div>
+					<EmptyImage />
 				)}
 			</div>
 			<h3 className='show__title'>{name}</h3>

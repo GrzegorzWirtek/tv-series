@@ -101,4 +101,26 @@
     margin-top: 20px;
     font-size: $main-description-font-size;
   }
+
+  &__full-cast{
+    display: block;
+    width: 100%;
+    max-width: $max-width;
+    text-align: right;
+    margin: 0 auto 40px auto;
+    padding-right: 20px;
+    font-weight: 700;
+    color: $rating-font-color;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover{
+     color:black;
+    }
+
+    @media (min-width: $medium-width){
+      padding-right: 100px;
+    }
+  }
 }

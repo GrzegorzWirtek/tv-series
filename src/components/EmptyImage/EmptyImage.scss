@@ -1,0 +1,29 @@
+@import '../../scss/variables.scss';
+
+.empty-img{
+    grid-row: 1/5;
+    justify-self: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43vw;
+    height: 43vw * 1.4;
+    max-height: 295px;
+    max-width: 210px;
+    margin: 0px 16px 0 0;
+    background: $empty-img-bcg-gradient;
+}
+
+.person__subclass{
+  width: 35vw;
+  height: 35vw * 1.4;
+  max-height: 295px;
+  max-width: 210px;
+  margin: 0px 16px 40px 0;
+}
+
+.empty-img-text{
+  color: $home-link-font-color;
+  font-weight: 700;
+  font-size: 1.2rem;
+}

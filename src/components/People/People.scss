@@ -1,0 +1,80 @@
+@import '../../scss/variables.scss';
+
+.people{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100%);
+  justify-content: center;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $main-padding;
+
+  @media (min-width: $medium-width){
+    grid-template-columns: repeat(auto-fit, 50%);
+    justify-content: space-between;
+  }
+
+  &__title{
+    grid-column: auto;
+    margin: 70px auto 20px auto;
+    max-width: $max-width;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    -webkit-box-shadow: 5px 5px 16px -9px rgba(0, 0, 0, 0.61);
+    -moz-box-shadow: 5px 5px 16px -9px rgba(0, 0, 0, 0.61);
+    box-shadow: 5px 5px 16px -9px rgba(0, 0, 0, 0.61);
+    color: rgba(0, 0, 0, 0.635);
+    background: $season-nr-bcg-gradient;
+
+    @media (min-width: $medium-width){
+      grid-column: 1/3;
+    }
+  }
+}
+
+.person{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto auto 1fr;
+
+  @media (min-width: $min-width){
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__img{
+    grid-row: 1/5;
+    justify-self: right;
+    width: 35vw;
+    height: 35vw * 1.4;
+    max-height: 295px;
+    max-width: 210px;
+    margin: 0px 16px 40px 0;
+  }
+
+  @media (min-width: $medium-width){
+    margin: 0px 16px 0 0;
+  }
+
+  &__name{
+   font-weight: 700;
+   font-size: 1rem;
+  }
+
+  &__age{
+    font-size: 0.8rem;
+    margin-top: 4px;
+    color:$country-font-color;
+  }
+
+  &__as{
+   margin: $text-margin 0;
+   font-size: 0.9rem;
+  }
+
+  &__character{
+    font-weight: 700;
+    font-size: 0.9rem;
+    color:$country-font-color;
+  }
+}

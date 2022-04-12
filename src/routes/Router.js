@@ -11,7 +11,7 @@ const Router = () => {
 			<Route path='/' element={<Home />} />
 			<Route path='/show/:id' element={<MainShow />} />
 			<Route path='/seasons/:id' element={<Seasons />} />
-			<Route path='/cast' element={<Cast />} />
+			<Route path='/cast/:id' element={<Cast />} />
 			<Route path='/crew' element={<Crew />} />
 		</Routes>
 	);

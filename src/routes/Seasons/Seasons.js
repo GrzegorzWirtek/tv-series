@@ -51,8 +51,8 @@ const Seasons = () => {
 						className='seasons__se-name'
 						key={episode.id}
 						onClick={() => handleShowInfo(episode.id)}>
-						<span className='seasons__se-name--nr'>{index + 1}</span>
-						<span className='seasons__se-name--text'>{episode.name}</span>
+						<p className='seasons__se-name--nr'>{index + 1}</p>
+						<p className='seasons__se-name--text'>{episode.name}</p>
 					</p>
 				))}
 			</div>

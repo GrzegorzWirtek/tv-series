@@ -2,7 +2,6 @@
 
 .seasons{
   max-width: $max-width;
-  padding: 0 $main-padding;
   margin: 0 auto;
 
   &__wrapper{
@@ -12,10 +11,15 @@
   }
 
   &__header{
+    padding: 0 $main-padding;
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-template-rows: auto 1fr;
     flex-basis: 100%;
+
+    @media (min-width: $medium-width) {
+      margin-bottom: 30px;
+    }
   }
 
   &__img{
@@ -47,6 +51,10 @@
   &__title{
     font-size: $title-font-size-medium;
     font-weight: 700;
+
+    @media (min-width: $medium-width){
+      font-size: $title-font-size-large;
+    }
   }
 
   &__nr-of{
@@ -54,6 +62,9 @@
     line-height: 1.5;
     font-weight: 700;
     color: $season-nr-bcg-color;
+    @media (min-width: $medium-width){
+      font-size: 1.4rem;
+    }
   }
 
   &__se-wrapper{
@@ -67,27 +78,45 @@
 
   &__se-nr{
     text-align: center;
-    color: white;
-    padding: 9px 0;
+    padding: 10px 0;
     margin-bottom: 20px;
     line-height: 1;
-    font-size: $season-number-font-size;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.635);
     background: $season-nr-bcg-gradient;
     font-weight: 700;
+    -webkit-box-shadow: 5px 5px 16px -9px rgba(0, 0, 0, 0.61);
+    -moz-box-shadow: 5px 5px 16px -9px rgba(0, 0, 0, 0.61);
+    box-shadow: 5px 5px 16px -9px rgba(0, 0, 0, 0.61);
   }
 
   &__se-name{
+    padding: 0 $main-padding;
     display: grid;
     grid-template-columns: 35px 1fr;
     margin-top: 12px;
     cursor: pointer;
+    transition: 0.4s;
 
     &--nr{
       font-size: $season-name-font-size;
       color: $country-font-color;
+      transition: 0.2s;
     }
 
-    &:hover > &--text{
+    &--text{
+      transition: 0.2s;
+    }
+
+    &:hover > &--nr {
+      @media(min-width: $min-width){
+      font-weight: bold;
+      color: $rating-font-color;
+      }
+    }
+
+    &:hover > &--text {
+      color: $rating-font-color;
       font-weight: bold;
     }
   }
