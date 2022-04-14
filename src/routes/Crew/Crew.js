@@ -21,7 +21,13 @@ const Crew = () => {
 		crew[0] === 1 ? (
 			<p className='crew__info'>No info</p>
 		) : (
-			<People people={crew} isRole={false} isCrew={true} isFullCast={false} />
+			<People
+				people={crew}
+				isRole={false}
+				isCrew={true}
+				isFullCast={false}
+				title='Crew'
+			/>
 		)
 	) : null;
 

@@ -15,22 +15,27 @@ const Cast = () => {
 		if (!show.name) return navigate('/');
 	}, [show.name, navigate]);
 
-	const cast = show._embedded.cast.length ? (
-		<>
-			<DetailsHeader image={show.image} title={show.name} text={null} />
-			<People
-				people={show._embedded.cast}
-				isRole={true}
-				isCrew={false}
-				isFullCast={true}
-			/>
-			{show._embedded.cast.length > 5 ? <BackTop /> : null}
-		</>
+	const castContent = show._embedded.cast.length ? (
+		<People
+			people={show._embedded.cast}
+			isRole={true}
+			isCrew={false}
+			isFullCast={true}
+			title='Cast'
+		/>
 	) : (
 		<p className='cast__info'>No info</p>
 	);
 
-	return <section className='cast'>{cast}</section>;
+	return (
+		<>
+			<section className='crew'>
+				<DetailsHeader image={show.image} title={show.name} text={null} />
+				{castContent}
+				{show._embedded.cast.length > 5 ? <BackTop /> : null}
+			</section>
+		</>
+	);
 };
 
 export default Cast;

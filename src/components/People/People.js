@@ -1,7 +1,7 @@
 import EmptyImage from '../EmptyImage/EmptyImage';
 import './People.scss';
 
-const People = ({ people, isRole, isCrew, isFullCast }) => {
+const People = ({ people, isRole, isCrew, isFullCast, title }) => {
 	const dateNow = new Date();
 	const year = dateNow.getFullYear();
 
@@ -42,7 +42,7 @@ const People = ({ people, isRole, isCrew, isFullCast }) => {
 
 	return (
 		<>
-			<p className='people__title'>Cast</p>
+			<p className='people__title'>{title}</p>
 			<section className='people'>{peopleArr}</section>
 		</>
 	);
