@@ -77,6 +77,7 @@ const MainShow = () => {
 								isRole={true}
 								isCrew={false}
 								isFullCast={false}
+								title='Cast'
 							/>
 
 							{show._embedded.cast.length > 6 ? (
