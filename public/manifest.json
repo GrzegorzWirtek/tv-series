@@ -1,8 +1,8 @@
 {
-  "short_name": "TV series",
-  "name": "TV series app",
+  "short_name": "TV Series",
+  "name": "TV Series by Grzegorz Wirtek",
   "start_url": ".",
-  "display": "standalone",
+  "display": "browser",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }

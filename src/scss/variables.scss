@@ -1,5 +1,8 @@
+//FONTS
+$header-font-family: 'Bebas Neue', cursive;
+
 //COLORS
-$header-font-color: rgb(255, 255, 255);
+$header-font-color: white;
 $channel-bcg-color: #706e9e;
 $rating-bcg-color: white;
 $show-curtain-color: rgba(29, 29, 55, 0.268);
@@ -9,15 +12,19 @@ $home-link-font-color: grey;
 $country-font-color:grey;
 $search-border-color: #969696;
 $header-bcg-color: #39385d;
-$header-bcg-gradient:  linear-gradient(165deg, rgba(103,102,157,1) 0%, rgb(34, 32, 66) 100%);
+$header-bcg-gradient:  linear-gradient(165deg, rgb(109, 109, 179) 0%, rgb(26, 25, 52) 100%);
 $empty-img-bcg-gradient: linear-gradient(155deg, rgb(250, 248, 255,1) 0%, rgb(146, 143, 157) 100%);
 $season-nr-bcg-color: rgb(103, 102, 149);
 $season-nr-bcg-gradient: linear-gradient(170deg, rgb(244, 244, 246) 0%, rgb(222, 222, 226) 100%);
 $popup-bcg-color: rgba(151, 151, 158, 0.841);
 
+$footer-font-color: #c0c0c0;
+$footer-bcg-color: linear-gradient(165deg, rgb(64, 64, 91) 0%, rgb(19, 19, 42) 100%);
+
+
 //FONT_SIZES
 $header-font-size: 1.2rem;
-$header-margin-top: 26px;
+$header-margin-top: 28px;
 
 $main-date-font-size: 0.9rem;
 $main-description-font-size: 1rem;
@@ -42,14 +49,17 @@ $season-number-font-size: 1.1rem;
 
 $popup-title-font-size: 1.2rem;
 
+$footer-font-size: 0.7rem;
+
 //SIZES
 $main-padding: 20px;
 $text-margin: 6px;
-$show-text-padding: 3px;
+$show-text-padding: 5px;
 $max-width: 900px;
 $seasons-width: 1200px;
 $input-height-large: 42px;
 $input-height-small: 40px;
+$footer-margin-bottom: 10px;
 
 //RESPONSIVE
 $min-width: 480px;

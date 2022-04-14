@@ -15,7 +15,7 @@
 
   &__title{
     grid-column: auto;
-    margin: 70px auto 20px auto;
+    margin: 0 auto 20px auto;
     max-width: $max-width;
     padding: 10px 0;
     font-size: 1.1rem;
@@ -68,11 +68,12 @@
   }
 
   &__as{
-   margin: $text-margin 0;
+   margin-top: $text-margin;
    font-size: 0.9rem;
   }
 
   &__character{
+    margin-top: $text-margin;
     font-weight: 700;
     font-size: 0.9rem;
     color:$country-font-color;

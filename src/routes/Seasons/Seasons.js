@@ -1,8 +1,13 @@
 import './Seasons.scss';
+import Popup from '../../components/Popup/Popup';
+import BackTop from '../../components/BackTop/BackTop';
+
 import { useContext, useEffect, useState } from 'react';
 import ShowsContext from '../../context/showsContext';
 import { useParams, useNavigate } from 'react-router-dom';
-import Popup from '../../components/Popup/Popup';
+import DetailsHeader from '../../components/DetailsHeader/DetailsHeader';
+
+import { Suspense } from 'react';
 
 const Seasons = () => {
 	const { show, seasons, getSeasons } = useContext(ShowsContext);
@@ -60,7 +65,7 @@ const Seasons = () => {
 	});
 
 	return (
-		show.name && (
+		<Suspense>
 			<section className='seasons'>
 				{infoId ? (
 					<Popup
@@ -68,26 +73,18 @@ const Seasons = () => {
 						click={handleCloseInfo}
 					/>
 				) : null}
-				<div className='seasons__wrapper'>
-					<div className='seasons__header'>
-						{show.image ? (
-							<img
-								className='seasons__img'
-								src={show.image.medium}
-								alt={show.name}
-							/>
-						) : (
-							<div className='seasons__img-empty'>
-								<p className='seasons__img-empty-text'>No photo</p>
-							</div>
-						)}
-						<h3 className='seasons__title'>{show.name}</h3>
-						<p className='seasons__nr-of'>Seasons: {seasonsArr.length}</p>
-					</div>
-					{seasonsContent}
-				</div>
+				<DetailsHeader
+					image={show.image}
+					title={show.name}
+					text={`SEASONS: ${seasonsArr.length}`}
+				/>
+				{seasonsContent}
 			</section>
-		)
+			{(seasonsArr.length > 3 && seasonsArr[0].length > 6) ||
+			seasonsArr[0] > 20 ? (
+				<BackTop />
+			) : null}
+		</Suspense>
 	);
 };
 

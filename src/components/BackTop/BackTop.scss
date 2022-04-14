@@ -1,0 +1,18 @@
+@import '../../scss/variables.scss';
+
+.back-top{
+  display: block;
+  width: 100%;
+  max-width: $max-width;
+  text-align: right;
+  margin: 0 auto 40px auto;
+  padding-right: 40px;
+  font-weight: 700;
+  color: $rating-font-color;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover{
+   color:black;
+  }
+}

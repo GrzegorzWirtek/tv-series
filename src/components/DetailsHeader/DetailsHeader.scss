@@ -1,0 +1,42 @@
+@import '../../scss/variables.scss';
+
+.details{
+  &__header{
+    padding: 0 $main-padding;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: auto 1fr;
+    flex-basis: 100%;
+    margin-bottom: 30px;
+
+    @media (min-width: $min-width) {
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__img{
+    grid-row: 1/3;
+    height: 85px;
+    margin: 5px 16px 0 0;
+  }
+
+  &__title{
+    font-size: $title-font-size-medium;
+    font-weight: 700;
+    align-self: end;
+    @media (min-width: $medium-width){
+      font-size: $title-font-size-large;
+    }
+  }
+
+  &__nr-of{
+    margin-top: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $season-nr-bcg-color;
+    @media (min-width: $medium-width){
+      font-size: 1.4rem;
+    }
+  }
+}

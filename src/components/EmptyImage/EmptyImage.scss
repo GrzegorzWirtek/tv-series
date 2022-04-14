@@ -17,13 +17,23 @@
 .person__subclass{
   width: 35vw;
   height: 35vw * 1.4;
-  max-height: 295px;
-  max-width: 210px;
   margin: 0px 16px 40px 0;
+}
+
+.details__subclass{
+  grid-row: 1/3;
+  height: 85px;
+  width: 60.5px;
+  margin: 5px 16px 0 0;
 }
 
 .empty-img-text{
   color: $home-link-font-color;
   font-weight: 700;
   font-size: 1.2rem;
+  text-align: center;
+}
+
+.details__text-subclass{
+  font-size: 0.8rem;
 }

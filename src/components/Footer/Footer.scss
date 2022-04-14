@@ -1,0 +1,54 @@
+@import '../../scss/variables.scss';
+
+.footer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  width: 100vw;
+  padding: 40px 0 20px 0;
+  margin-top: 100px;
+  color: $footer-font-color;
+  background: $footer-bcg-color;
+
+  &__api{
+    text-align: center;
+    font-size: $footer-font-size;
+    color: $footer-font-color;
+    margin-bottom: $footer-margin-bottom;
+  }
+
+  &__a{
+    font-size: $footer-font-size;
+    color: $footer-font-color;
+    margin-bottom: $footer-margin-bottom;
+    transition: 0.1s;
+
+    &:hover{
+      color: rgb(152, 152, 218);
+    }
+  }
+
+  &__name{
+    text-align: center;
+    flex-basis: 100%;
+    font-size: $footer-font-size;
+    color: $footer-font-color;
+  }
+
+  &__icons{
+    display: flex;
+    align-content: center;
+  }
+
+  &__icon{
+    width: 22px;
+    margin: $footer-margin-bottom;
+    filter: invert(66%) sepia(58%) saturate(1%) hue-rotate(34deg) brightness(105%) contrast(90%);
+    line-height: 1;
+
+    &--in{
+      transform: translateY(1px);
+    }
+  }
+}

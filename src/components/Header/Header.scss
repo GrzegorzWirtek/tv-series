@@ -2,17 +2,30 @@
 
 .header{
   position: relative;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   height: 100px;
   padding: 0 $main-padding;
   margin-bottom: 70px; 
   background: $header-bcg-gradient;
 
+  &__logo{
+    display: flex;
+    align-content: center;
+    transform: translateX(-10px);
+  }
+
+  &__img{
+    height: 82px;
+    transform: translateY(7px);
+  }
+
   &__title{
+    transform: translateX(-23px);
     padding-top: $header-margin-top;
-    color: $header-font-color;
+    font-family: $header-font-family;
     font-size: $header-font-size;
-    font-weight: 700;
     letter-spacing: 1px;
+    color: $header-font-color;
   }
 }

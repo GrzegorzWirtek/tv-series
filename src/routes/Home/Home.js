@@ -41,9 +41,9 @@ const Home = () => {
 	}, [getShows, removeData, shows.length]);
 
 	return (
-		<>
+		<main className='main'>
 			<Shows />
-		</>
+		</main>
 	);
 };
 

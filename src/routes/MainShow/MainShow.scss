@@ -1,11 +1,16 @@
 @import '../../scss/variables.scss';
 
 .main-show{
-  display: flex;
-  flex-wrap: wrap;
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 0 $main-padding;
+  min-height: calc(100vh - 320px);
+
+  &__content{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $main-padding;
+  }
+ 
 
   &__img{
     flex-basis: 43%;
@@ -98,7 +103,9 @@
   }
 
   &__description{
+    width: 100%;
     margin-top: 20px;
+    margin-bottom: 70px;
     font-size: $main-description-font-size;
   }
 

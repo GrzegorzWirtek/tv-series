@@ -1,19 +1,31 @@
 import EmptyImage from '../EmptyImage/EmptyImage';
 import './People.scss';
 
-const People = ({ people }) => {
+const People = ({ people, isRole, isCrew, isFullCast }) => {
 	const dateNow = new Date();
 	const year = dateNow.getFullYear();
 
 	const peopleArr = people.map((item) => {
-		const { character, person } = item;
+		const { character, person, type } = item;
+		const whatRole = isFullCast
+			? person
+			: isRole
+			? character.image
+				? character
+				: person
+			: person;
 
-		const age = person.birthday ? year - person.birthday.slice(0, 4) : null;
+		const age = person.birthday
+			? person.deathday
+				? `${person.birthday.slice(0, 4)}-${person.deathday.slice(0, 4)}`
+				: `age: ${year - person.birthday.slice(0, 4)}`
+			: null;
+
 		return (
 			<article className='person' key={person.id}>
-				{character.image ? (
+				{whatRole.image ? (
 					<img
-						src={character.image.medium}
+						src={whatRole.image.medium}
 						alt={person.name}
 						className='person__img'
 					/>
@@ -21,9 +33,9 @@ const People = ({ people }) => {
 					<EmptyImage subClass={'person__subclass'} />
 				)}
 				<p className='person__name'>{person.name}</p>
-				<p className='person__age'>(age: {age})</p>
-				<p className='person__as'>as</p>
-				<p className='person__character'>{character.name}</p>
+				{person.birthday && <p className='person__age'>{age}</p>}
+				{!isCrew && <p className='person__as'>as</p>}
+				<p className='person__character'>{isCrew ? type : whatRole.name}</p>
 			</article>
 		);
 	});

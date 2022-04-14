@@ -5,6 +5,7 @@ import Router from './routes/Router';
 import ShowsState from './context/ShowsState';
 import Nav from './components/Nav/Nav';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 					<Header />
 					<Nav />
 					<Router />
+					<Footer />
 				</ShowsState>
 			</HashRouter>
 		</div>

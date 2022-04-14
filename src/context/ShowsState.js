@@ -5,6 +5,7 @@ import {
 	GET_MAIN_SHOW,
 	REMOVE_MAIN_SHOW,
 	GET_SEASONS,
+	GET_CREW,
 } from './types';
 import showsReducer from './showsReducer';
 import axios from 'axios';
@@ -14,6 +15,7 @@ const ShowsState = (props) => {
 		shows: [],
 		show: {},
 		seasons: [],
+		crew: [1],
 	};
 
 	const [state, dispatch] = useReducer(showsReducer, initialState);
@@ -48,12 +50,19 @@ const ShowsState = (props) => {
 
 	const getSeasons = useCallback(async (id) => {
 		const seasonsData = await axios.get(
-			// `https://api.tvmaze.com/shows/${id}/episodes`,
 			`https://api.tvmaze.com/shows/${id}/episodes?specials=${id}`,
 		);
 		return dispatch({
 			type: GET_SEASONS,
 			payload: seasonsData.data,
+		});
+	}, []);
+
+	const getCrew = useCallback(async (id) => {
+		const crewData = await axios.get(`https://api.tvmaze.com/shows/${id}/crew`);
+		return dispatch({
+			type: GET_CREW,
+			payload: crewData.data.length ? crewData.data : [1],
 		});
 	}, []);
 
@@ -64,10 +73,12 @@ const ShowsState = (props) => {
 				show: state.show,
 				route: state.route,
 				seasons: state.seasons,
+				crew: state.crew,
 				getShows,
 				getMainShow,
 				removeData,
 				getSeasons,
+				getCrew,
 			}}>
 			{props.children}
 		</ShowsContext.Provider>
