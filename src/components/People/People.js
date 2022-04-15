@@ -35,7 +35,7 @@ const People = ({ people, isRole, isCrew, isFullCast, title }) => {
 				<p className='person__name'>{person.name}</p>
 				{person.birthday && <p className='person__age'>{age}</p>}
 				{!isCrew && <p className='person__as'>as</p>}
-				<p className='person__character'>{isCrew ? type : whatRole.name}</p>
+				<p className='person__character'>{isCrew ? type : character.name}</p>
 			</article>
 		);
 	});
