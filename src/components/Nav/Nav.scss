@@ -21,6 +21,10 @@
   
     @media (min-width: $min-width){
       margin-right: 30px;
+
+      &:hover{
+        color: black;
+      }
     }
   }
 }

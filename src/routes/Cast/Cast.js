@@ -13,27 +13,31 @@ const Cast = () => {
 
 	useEffect(() => {
 		if (!show.name) return navigate('/');
-	}, [show.name, navigate]);
+	}, [show, navigate]);
 
-	const castContent = show._embedded.cast.length ? (
-		<People
-			people={show._embedded.cast}
-			isRole={true}
-			isCrew={false}
-			isFullCast={true}
-			title='Cast'
-		/>
-	) : (
-		<p className='cast__info'>No info</p>
-	);
+	const castContent = show.name ? (
+		show._embedded.cast.length ? (
+			<People
+				people={show._embedded.cast}
+				isRole={true}
+				isCrew={false}
+				isFullCast={true}
+				title='Cast'
+			/>
+		) : (
+			<p className='cast__info'>No info</p>
+		)
+	) : null;
 
 	return (
 		<>
-			<section className='crew'>
-				<DetailsHeader image={show.image} title={show.name} text={null} />
-				{castContent}
-				{show._embedded.cast.length > 5 ? <BackTop /> : null}
-			</section>
+			{show.name ? (
+				<section className='crew'>
+					<DetailsHeader image={show.image} title={show.name} text={null} />
+					{castContent}
+					{show._embedded.cast.length > 5 ? <BackTop /> : null}
+				</section>
+			) : null}
 		</>
 	);
 };

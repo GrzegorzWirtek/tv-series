@@ -17,7 +17,6 @@ const MainShow = () => {
 
 	return (
 		<section className='main-show'>
-			{' '}
 			{!show.name ? null : (
 				<>
 					<section className='main-show__content'>
@@ -88,7 +87,7 @@ const MainShow = () => {
 						</>
 					) : null}
 				</>
-			)}{' '}
+			)}
 		</section>
 	);
 };
